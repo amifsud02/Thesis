@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+    
+    
+</head>
+<body>
+    <form id="regForm" action="">
+
+        <h1>Register:</h1>
+        
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">Login Info:
+            <p><input id="usename" placeholder="Username..." type="text" oninput="this.className = ''"></p>
+            <p><input id="password" placeholder="Password..." type="password" this.className = ''"></p>
+        </div>
+
+        <div class="tab">Account Info:
+          <p><input id="age" placeholder="Age..." oninput="this.className = ''"></p>
+          
+          <p>Select Gender:</p>
+
+          <select id="gender" oninput="this.className = ''">
+            <option value="">Gender...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <p><input id="location" placeholder="Age..." oninput="this.className = ''"></p>
+
+          
+        </div>
+        
+        <div class="tab">Select Categories:
+          <p>Multiple Selection here</p>
+        </div>
+        
+       
+        
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        
+    </form>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+Loop through the list of news articles, access the link and check for response, if response is 200, then add the link to the list of valid links.

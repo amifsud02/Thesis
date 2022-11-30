@@ -1,0 +1,124 @@
+*{
+    font-family: Raleway;
+    
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    align-items: center;
+}
+
+/* Style the form */
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
+  
+  /* Style the input fields */
+  input, select {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+
+  /* CATEGORY SELECTION */
+
+  .select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 300px;
+    gap: 1px;
+  }
+  
+  .select__item {
+    padding: 10px;
+    cursor: pointer;
+    font-family: "Heebo", sans-serif;
+    text-align: center;
+    border-radius: 3px;
+    background: #eeeeee;
+    transition: background 0.1s;
+  }
+  
+  .select__item--selected {
+    background: #009578;
+    color: #ffffff;
+  }
+  
+  .container {
+    display: grid;
+    row-gap: 25px;
+    column-gap: 25px;
+    grid-template-columns: repeat(auto-fill, 100px);
+  }
+
+  label {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  label input[type="checkbox"] {
+    display: none;
+  }
+  
+  label .icon-box {
+    position: relative;
+    display: flex;
+    width: 120px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #353746;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 21px;
+    transition: 0.5s;
+    user-select: none;
+  }
+  
+  label input[type="checkbox"]:checked ~ .icon-box {
+    background: linear-gradient(138deg, #da2c4d, #f8ab37);
+    color: #fff;
+  }
+  
