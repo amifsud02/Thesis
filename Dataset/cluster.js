@@ -10,7 +10,7 @@ var newsData = JSON.parse(fs.readFileSync('./News_Category_Dataset_v3.json'));
         timeout: 60000,
         monitor: true,
         puppeteerOptions: {
-        headless: false,
+        headless: true,
         defaultViewport: false,
         userDataDir: "./tmp",
         },
@@ -69,7 +69,7 @@ var newsData = JSON.parse(fs.readFileSync('./News_Category_Dataset_v3.json'));
         if(paragraphList && image == null)
         {
             fs.appendFile(
-                `NewsCategory-batch14.json`,
+                `NewsCategory-batch16.json`,
                 `${JSON.stringify({otherData, isValid: false})},`,
                 function(err) { if(err) throw err }
             )
@@ -78,7 +78,7 @@ var newsData = JSON.parse(fs.readFileSync('./News_Category_Dataset_v3.json'));
         {
 
             fs.appendFile(
-                `NewsCategory-batch14.json`,
+                `NewsCategory-batch16.json`,
                 `${JSON.stringify({otherData, articleContent: paragraphList, image: image, isValid: true})},`,
                 function(err) { if(err) throw err }
             )
@@ -88,9 +88,9 @@ var newsData = JSON.parse(fs.readFileSync('./News_Category_Dataset_v3.json'));
    
     for(const index in newsData)
     {
-        if(index > 16500) //(2433+1128+345+3849)) 1633+2426+3849
+        if(index > 30000) //(2433+1128+345+3849)) 1633+2426+3849
         {
-            if(index <= 19500)
+            if(index <= 40000)
             {
                 cluster.queue({url: newsData[index].link, otherData: newsData[index]});   
             }
